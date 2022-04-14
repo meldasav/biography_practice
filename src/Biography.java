@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Biography {
     public static void main(String[] args) {
 
@@ -32,6 +34,9 @@ public class Biography {
          */
 
         //YOUR CODE HERE
+
+        Scanner input =new Scanner(System.in);
+        System.out.println();
 
     }
 }
