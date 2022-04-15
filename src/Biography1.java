@@ -29,42 +29,56 @@ public class Biography1 {
      24 Hours in the Life of a Woman     novella         80
      */
    Scanner scan =new Scanner(System.in);
+   List<Book1> bookList=new ArrayList<>();
    System.out.println("What is your favorite author’s first name?");
-   String authorFName= scan.nextLine();
+   String firstName= scan.nextLine();
+
    System.out.println("What is your favorite author’s last name?");
-   String authorLName=scan.nextLine();
+   String lastName=scan.nextLine();
+
    System.out.println("Where is your favorite author is from?");
    String country=scan.nextLine();
-   System.out.println("Is your favorite author is alive? (Y/N)");
-   String isAlive=scan.nextLine();
-   boolean authorAlive=isAlive.equalsIgnoreCase("y");
+
+   String str="";
+   boolean isAlive=false;
+     System.out.println("Is your favorite author is alive? (Y/N)");
+      str=scan.nextLine();
+    if(str.toUpperCase().startsWith("Y")) isAlive=true;
+
    int age=MIN_VALUE;
-   if(authorAlive) {
+   if(isAlive) {
       System.out.println("How old is your author?");
       age = scan.nextInt();
    }
-       System.out.println("Would you like to enter book info?(Y/N)");
-   String answer=scan.next();
-   List<Book> bookList=new ArrayList<>();
 
-   if(answer.equalsIgnoreCase("y")){
-      while(answer.equalsIgnoreCase("y")){
+     Author1 myAuthor = new Author1(firstName, lastName, country, isAlive,age,bookList);
+     String results;
+     do{
+         System.out.println("Would you like to enter book info? (Y/N)");
+         results=scan.next();
+
+
+         if((results.toUpperCase().startsWith("Y"))){
          System.out.println("What is the name of the book?");
-         String bookName=scan.nextLine();
+         String name=scan.nextLine();
          scan.nextLine();
          System.out.println("What is genre of the book?");
-         String bGenre=scan.nextLine();
+         String genre=scan.nextLine();
          System.out.println("How many pages does book have?");
-         int totalPageOfBook=scan.nextInt();
-         scan.nextLine();
+         int totalPage=scan.nextInt();
 
-       //  Book bk=new Book(bookName,bGenre,totalPageOfBook);
-       //  bookList.add(bk);
+
+         Book1 book1=new Book1(name,genre,totalPage);
+         bookList.add(book1);
 
       }
-      System.out.println("end of the program");
-   }
-       System.out.println(new Author1(authorFName,authorLName,country,authorAlive,age,bookList));
+
+      } while(results.toUpperCase().startsWith("Y"));
+            System.out.println(myAuthor);
+
+       for (Book1 book1 :bookList){
+           System.out.println(book1);
+       }
 
 
     }

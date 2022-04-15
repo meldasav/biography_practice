@@ -9,7 +9,7 @@ public class Author1 {
      */
 
     //Create 6 args custom constructor here
-    public Author1(String firstName, String lastName, String country, boolean isAlive, int age, List<Book> books) {
+    public Author1(String firstName, String lastName, String country, boolean isAlive, int age, List<Book1> books) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
@@ -27,7 +27,7 @@ public class Author1 {
     public String country;
     public boolean isAlive;
     public int age;
-    public List<Book> books;
+    public List<Book1> books;
 
      /*
         Override toString() method here that returns Author object information
@@ -35,18 +35,22 @@ public class Author1 {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        if (this.age < 1) {
-            sb = new StringBuilder("Author's information = Author{firstName='" +
-                    firstName + "', lastName='" + lastName + "', country='" +
-                    country + "', isAlive=" + isAlive + "}");
+        if (isAlive) {
+            return "Author1{" +
+                    "firstName='" + firstName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    ", country='" + country + '\'' +
+                    ", isAlive=" + isAlive +
+                    ", age=" + age +
+                    '}';
 
-        } else {
-            sb = new StringBuilder("Author's information = Author{firstName='" +
-                    firstName + "', lastName='" + lastName + "', country='" +
-                    country + "', isAlive=" + isAlive + ", age=" + age + "}");
         }
+            return "Author1{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", country='" + country + '\'' +
+                ", isAlive=" + isAlive +
+                '}';
 
-        return sb.toString();
     }
 }

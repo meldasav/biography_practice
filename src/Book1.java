@@ -5,10 +5,10 @@ public class Book1 {
      Define Book class fields as name, genre, totalPage
      */
     //Create 3 args custom constructor here
-     public Book1(String bookName,String bGenre,int totalPageOfBook){
-     this.name=bookName;
-     this.genre=bGenre;
-     this.totalPage=totalPageOfBook;
+     public Book1(String name,String genre,int totalPage){
+     this.name=name;
+     this.genre=genre;
+     this.totalPage=totalPage;
     }
 
 
